@@ -1,7 +1,8 @@
 import React,{ Component } from 'react'
-import  { Layout } from 'antd'
+import  { Layout ,Button } from 'antd'
 import {Redirect,Route,Switch}  from 'react-router-dom'  //跳转用
 import './index.less'
+import storageUtils  from '../../utils/storageUtils'
 
 import  LeftNav   from '../../components/left-nav'
 import Hooks from '../../pages/data/hooks/hooks'
@@ -11,6 +12,13 @@ import DataOperation from '../dataOperation/dataOperation'
 const { Header, Footer, Sider, Content } = Layout;
 
 export default class Operation extends Component{
+
+    cancleLogin =()=>{
+        storageUtils.removeUser();
+        this.props.history.replace('./login');
+    };
+
+
     render() {
         return (
                 <Layout style={ { minHeight:"100%" } }>
@@ -19,14 +27,16 @@ export default class Operation extends Component{
                         <LeftNav/>
                     </Sider>
                     <Layout>
-                        <Header className={ 'header'} >Header</Header>
+                        <Header className={ 'header'} >
+                            <Button type={"primary"} onClick={this.cancleLogin} className={'cancleButton'}>注销</Button>
+                        </Header>
                         <Content style={{margin: 20,backgroundColor:"white"}}>
                             <Switch>
                                 <Route path={'/state'} component={ State }></Route>
                                 <Route path={'/hooks'} component={ Hooks }></Route>
                                 <Route path={'/redux'} component={ Redux }></Route>
                                 <Route path={'/database'} component={ DataOperation }></Route>
-                                <Redirect to={'/state'}/>
+                                <Redirect to={'/login'}/>
                             </Switch>
 
                         </Content>

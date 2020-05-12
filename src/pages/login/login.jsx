@@ -35,7 +35,7 @@ class Login extends Component{
                 storageUtils.removeUser();
             }
             message.success('登录成功');
-            this.props.history.push('./');
+            this.props.history.push('./state');
         }else{                    //登录失败
             message.error('登录失败:'+result.msg);
         }

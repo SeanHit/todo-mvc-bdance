@@ -1,6 +1,6 @@
 import ajax from './ajax'
 
-const BASE='';  //配置代理服务器用到
+const BASE='bdapi';  //配置代理服务器用到
 
 export const reqLogin =(username, password )=> ajax(BASE+'/login', {username,password}, 'POST');
 export const reqRegisterUser = (data) =>ajax(BASE+'/manage/user/add',data,'POST');
