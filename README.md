@@ -36,7 +36,7 @@
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200512131448915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xfeF9jc2Vy,size_16,color_FFFFFF,t_70)
    1. 其中（数据管理/本地存储，使用的是对应的state,redux,hooks相关技术），数据来源于本地存储localstorage
    2. 数据处理/数据库，是与后端交互的数据，其中数据库为mongodb
-5. 其中在本地存储实践（数据存储在localstorage）中，使用计数器模拟向后端发送数据;而在真实的向后端接口实践中，使用axios像后端请求数据。
+5. 其中在本地存储实践（数据存储在localstorage）中，使用计数器模拟向后端发送数据;而在真实的向后端接口实践中，使用axios向后端请求数据。
 6. 为了方便，不同的技术我都使用了同一套业务模拟来实现
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200512132145974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xfeF9jc2Vy,size_16,color_FFFFFF,t_70)
      1. 其中主要就是模拟评论的添加，删除，展示等，从而设计组件之间。
